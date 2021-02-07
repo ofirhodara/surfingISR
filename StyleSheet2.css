@@ -1,0 +1,48 @@
+﻿body {
+    background-image: url('images/mainback.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Times New Roman", Times, serif;
+}
+table {
+    font-size:x-large;
+    color:White;
+}
+h1 {
+    color: antiquewhite;
+    text-align: center;
+    text-decoration:underline;
+}
+
+p {
+    font-size: x-large;
+    color:White;
+}
+
+img {
+    height: 300px;
+    width: 350px;
+}
+a:link { /*רגיל*/
+    text-decoration: none;
+    color: darkblue;
+}
+a:visited { /*אחרי שנלחץ*/
+color: darkblue;
+}
+a:hover {  /*בזמן שהעכבר עליו*/
+    text-decoration: underline;
+}
+
+ol {
+    list-style-type: square;
+}
+li {
+    font-size: x-large;
+    color:White;
+    
+}
+h2 {
+    text-decoration: underline;
+    color: antiquewhite;
+}

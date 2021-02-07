@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <link href="StyleSheet2.css" rel="stylesheet" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body dir="rtl">
+    <%if (Session["peil"] == "yes" && Session["admin"] == "no")
+        { %>
+    <h1>שלום אורח האתר!!</h1>
+    <%} %>
+    <%if (Session["admin"] == "yes")
+        { %>
+    <h1>שלום המנהל!</h1>
+    <%} %>
+
+    <table style="width: 100%; color: darkblue; background-color: aqua; font-weight: bold; text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+        <tr style="background-color: Background; text-align: center">
+            <%if (Session["peil"] == "no")
+                { %>
+            <td colspan="2">
+                <a href="register.aspx">Register</a>
+            </td>
+            <td colspan="2">
+                <a href="INDEX.aspx">Log In</a>
+            </td>
+            <%} %>
+
+            <%if (Session["admin"] == "yes")
+                { %>
+            <td colspan="2">
+                <a href="Delete1.aspx">מחיקת המשתמשים</a>
+            </td>
+            <%} %>
+            <%if (Session["admin"] == "yes")
+                { %>
+            <td colspan="2">
+                <a href="sqls.aspx">שאילתה-20 שנות גלישה </a>
+            </td>
+            <%} %>
+             <%if (Session["admin"] == "yes")
+                { %>
+            <td colspan="2">
+                <a href="anothersql.aspx">שאילתה-לפי קשר ומין</a>
+            </td>
+            <%} %>
+
+            <%if (Session["admin"] == "no" && Session["peil"] == "yes")
+                { %>
+            <td colspan="2">
+                <a href="update1.aspx">עדכון סיסמת משתמש</a>
+            </td>
+            <%} %>
+        </tr>
+        <%if (Session["peil"] == "yes")
+            {%>
+        <tr>
+            <td style="text-decoration: underline; font-weight: bold">אתר גלישת הגלים הישראלי
+            </td>
+            <td>
+                <a href="mainsurfing.aspx">ראשי</a>
+            </td>
+            <td>
+                <a href="generalinfo.aspx">ידע בסיסי</a>
+            </td>
+            <td>
+                <a href="israel.aspx">גלישה בישראל</a>
+            </td>
+            <td>
+                <a href="boards.aspx">סוגי גלשנים</a>
+            </td>
+            <td>
+                <a href="myself.aspx">על עצמי</a>
+            </td>
+            <td>
+                <a href="shop.aspx">חנויות גלישה</a>
+            </td>
+            <%if (Session["admin"] == "yes")
+                { %>
+            <td>
+                <a href="usersTable.aspx">טבלת משתמשים</a>
+            </td>
+            <%} %>
+        </tr>
+        <%} %>
+    </table>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <br />
+    <br />
+    <br />
+    <br />
+    <center>
+        <%if (Session["peil"] == "yes")
+            { %>
+        <a href="logOut.aspx" style="color: Black">
+            <img src="images/logout.png" style="width: 300px; height: 70px" /></a>
+        <br />
+        <%} %>
+        <img src="images/LOGO.jpg" style="width: 300px; height: 50px" />
+    </center>
+</body>
+</html>
+
+
